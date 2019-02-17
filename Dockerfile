@@ -2,7 +2,7 @@
 ############################
 # STEP 1 build executable binary
 ############################
-FROM golang:latest
+FROM golang:latest AS builder
 
 RUN mkdir -p /go/src/github.com/elastic/
 RUN mkdir -p /elk-usg/filebeat
