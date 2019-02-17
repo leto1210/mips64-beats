@@ -1,9 +1,9 @@
 version: '3.2'
 
 services:
-  elasticsearch:
+  mips64-beats:
     container_name: mips64-beats
     build:
       context: ./
     volumes:
-      - /YourDirectory/:/download/
+      - /opt/docker/elk-usg/:/download/
