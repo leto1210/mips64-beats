@@ -22,6 +22,7 @@ RUN GOOS=linux GOARCH=mips64 go build -v -o /elk-usg/metricbeat/metricbeat
 # STEP 2 build a small image
 ############################
 FROM alpine:latest
+
 COPY --from=builder /elk-usg /elk-usg
 
 COPY /cp.sh /root/cp.sh
