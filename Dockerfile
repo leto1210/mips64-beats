@@ -8,10 +8,10 @@ RUN git clone -b v6.5.1 https://github.com/elastic/beats.git /go/src/github.com/
 
 WORKDIR /go/src/github.com/elastic/beats/filebeat
 
-RUN GOOS=linux GOARCH=mips64 go build -o /elk-usg/filebeat/filebeat
+RUN GOOS=linux GOARCH=mips64 go build -v -o /elk-usg/filebeat/filebeat
 
 WORKDIR /go/src/github.com/elastic/beats/metricbeat
 
-RUN GOOS=linux GOARCH=mips64 go build -o /elk-usg/metricbeat/metricbeat
+RUN GOOS=linux GOARCH=mips64 go build -v -o /elk-usg/metricbeat/metricbeat
 
 CMD ["/root/cp.sh /elk-usg /download"]
