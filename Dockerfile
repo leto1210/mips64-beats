@@ -16,6 +16,8 @@ RUN GOOS=linux GOARCH=mips64 go build -v -o /elk-usg/filebeat/filebeat
 
 WORKDIR /go/src/github.com/elastic/beats/metricbeat
 
+RUN GOOS=linux GOARCH=mips64 go build -v -o /elk-usg/metricbeat/metricbeat
+
 ############################
 # STEP 2 build a small image
 ############################
@@ -24,5 +26,5 @@ COPY --from=builder /elk-usg /elk-usg
 
 COPY /cp.sh /root/cp.sh
 RUN chmod +x /root/cp.sh
-RUN GOOS=linux GOARCH=mips64 go build -v -o /elk-usg/metricbeat/metricbeat
+
 CMD ["/root/cp.sh"]
