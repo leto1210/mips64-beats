@@ -25,7 +25,7 @@ FROM alpine:latest
 
 COPY --from=builder /elk-usg /elk-usg
 
-COPY /cp.sh /root/cp.sh
-RUN chmod +x /root/cp.sh
+COPY ./cp.sh /
+RUN chmod +x /cp.sh
 WORKDIR /root
-CMD ["/bin/sh /root/cp.sh /elk-usg /download"]
+CMD ["/cp.sh", "/elk-usg", "/download"]
