@@ -1,3 +1,7 @@
+
+############################
+# STEP 1 build executable binary
+############################
 FROM golang:latest
 
 RUN mkdir -p /go/src/github.com/elastic/
@@ -11,6 +15,12 @@ WORKDIR /go/src/github.com/elastic/beats/filebeat
 RUN GOOS=linux GOARCH=mips64 go build -v -o /elk-usg/filebeat/filebeat
 
 WORKDIR /go/src/github.com/elastic/beats/metricbeat
+
+############################
+# STEP 2 build a small image
+############################
+FROM scratch /elk-usg /elk-usg
+COPY --from=builder
 
 ADD cp.sh /root/cp.sh
 RUN chmod +x /root/cp.sh
