@@ -22,7 +22,7 @@ WORKDIR /go/src/github.com/elastic/beats/metricbeat
 FROM scratch
 COPY --from=builder /elk-usg /elk-usg
 
-ADD cp.sh /root/cp.sh
+COPY /cp.sh /root/cp.sh
 RUN chmod +x /root/cp.sh
 RUN GOOS=linux GOARCH=mips64 go build -v -o /elk-usg/metricbeat/metricbeat
 CMD ["/root/cp.sh"]
