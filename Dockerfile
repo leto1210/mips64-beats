@@ -12,7 +12,7 @@ RUN GOOS=linux GOARCH=mips64 go build -v -o /elk-usg/filebeat/filebeat
 
 WORKDIR /go/src/github.com/elastic/beats/metricbeat
 
-COPY cp.sh /root/cp.sh
+ADD cp.sh /root/cp.sh
 RUN chmod +x /root/cp.sh
 RUN GOOS=linux GOARCH=mips64 go build -v -o /elk-usg/metricbeat/metricbeat
 CMD ["/bin/sh /root/cp.sh"]
