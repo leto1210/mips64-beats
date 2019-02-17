@@ -27,5 +27,5 @@ COPY --from=builder /elk-usg /elk-usg
 
 COPY /cp.sh /root/cp.sh
 RUN chmod +x /root/cp.sh
-
+WORKDIR /root
 CMD ["/root/cp.sh"]
