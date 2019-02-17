@@ -28,4 +28,4 @@ COPY --from=builder /elk-usg /elk-usg
 COPY ./cp.sh /
 RUN chmod +x /cp.sh
 CMD ["sleep","9600"]
-#CMD ["/cp.sh", "/elk-usg", "/download"]
+#CMD ["/bin/sh", "/cp.sh", "/elk-usg/ /download/"]
