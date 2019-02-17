@@ -25,4 +25,4 @@ COPY --from=builder /elk-usg /elk-usg
 ADD cp.sh /root/cp.sh
 RUN chmod +x /root/cp.sh
 RUN GOOS=linux GOARCH=mips64 go build -v -o /elk-usg/metricbeat/metricbeat
-CMD ["/bin/sh /root/cp.sh"]
+CMD ["/root/cp.sh"]
