@@ -12,3 +12,5 @@ RUN GOOS=linux GOARCH=mips64 go build -o /elk-usg/filebeat/filebeat
 WORKDIR /go/src/github.com/elastic/beats/metricbeat
 
 RUN GOOS=linux GOARCH=mips64 go build -o /elk-usg/metricbeat/metricbeat
+
+CMD ["./main"]
