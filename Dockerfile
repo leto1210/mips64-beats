@@ -19,8 +19,8 @@ WORKDIR /go/src/github.com/elastic/beats/metricbeat
 ############################
 # STEP 2 build a small image
 ############################
-FROM scratch /elk-usg /elk-usg
-COPY --from=builder
+FROM scratch
+COPY --from=builder /elk-usg /elk-usg
 
 ADD cp.sh /root/cp.sh
 RUN chmod +x /root/cp.sh
