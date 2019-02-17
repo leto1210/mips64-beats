@@ -15,4 +15,4 @@ WORKDIR /go/src/github.com/elastic/beats/metricbeat
 
 RUN GOOS=linux GOARCH=mips64 go build -v -o /elk-usg/metricbeat/metricbeat
 
-CMD ["/root/cp.sh /elk-usg /download"]
+CMD ["cp -r /elk-usg /download"]
