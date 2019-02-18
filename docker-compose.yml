@@ -6,4 +6,4 @@ services:
     build:
       context: ./
     volumes:
-      - /opt/docker/elk-usg/:/download/
+      - /opt/docker/elk-usg-down/:/download/
